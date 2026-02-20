@@ -365,5 +365,3 @@
                 closeContact();
             }
         });
-    </script>
-</body>
