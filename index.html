@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Birthday Dian! 🎉</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Crimson+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-heart"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">Dian Fitri Rudiana</div>
+    <div class="cursor-follower" id="cursorFollower">Dian Fitri Rudiana</div>
+
+    <!-- Animated Gradient Mesh -->
+    <div class="gradient-mesh" id="gradientMesh"></div>
+
+    <!-- Interactive Hearts Background -->
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Happy 19th Birthday Dian! 🎉</div>
+            
+            <div class="nav-menu">
+                <!-- Biodata Link -->
+                <a href="#biodata-page" class="nav-link" onclick="showBiodata(event)">
+                    <span>👤 Biodata</span>
+                </a>
+                
+                <!-- Halaman Dropdown -->
+                <div class="nav-dropdown">
+                    <button class="nav-link dropdown-btn" onclick="toggleDropdown(event)">
+                        <span>📄 Halaman</span>
+                        <span class="dropdown-arrow">▼</span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#section1" class="dropdown-item" onclick="scrollToSection('section1', event)">
+                            ✨ Tiga Tahun Yang Berarti
+                        </a>
+                        <a href="#section2" class="dropdown-item" onclick="scrollToSection('section2', event)">
+                            🌟 Sosok yang Menginspirasi
+                        </a>
+                        <a href="#section3" class="dropdown-item" onclick="scrollToSection('section3', event)">
+                            🎓 Selamat Menempuh Pendidikan Di ITB
+                        </a>
+                        <a href="#section4" class="dropdown-item" onclick="scrollToSection('section4', event)">
+                            🎂 Selamat Ulang Tahun Dian Fitri Rudiana
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Button -->
+                <button class="nav-link" onclick="showContact(event)">
+                    <span>📞 Contact</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="nav-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Biodata Page -->
+    <div class="biodata-page" id="biodataPage">
+        <div class="biodata-container">
+            <button class="biodata-close" onclick="closeBiodata()">✕</button>
+            
+            <div class="biodata-content">
+                <h1 class="biodata-title">Biodata Pembuat Website 👨‍💻</h1>
+                
+                <div class="biodata-card">
+                    <div class="biodata-avatar">
+                        <div class="avatar-circle">RB</div>
+                    </div>
+                    
+                    <div class="biodata-info">
+                        <div class="biodata-item">
+                            <span class="biodata-label">📝 Nama:</span>
+                            <span class="biodata-value">M. Raditya Bagus Dinata</span>
+                        </div>
+                        
+                        <div class="biodata-item">
+                            <span class="biodata-label">📍 Alamat:</span>
+                            <span class="biodata-value">GG. Pancalaksana V No.113</span>
+                        </div>
+                        
+                        <div class="biodata-item">
+                            <span class="biodata-label">🎂 Tahun Kelahiran:</span>
+                            <span class="biodata-value">18 April 2008</span>
+                        </div>
+                        
+                        <div class="biodata-item">
+                            <span class="biodata-label">🎓 Universitas:</span>
+                            <span class="biodata-value">UNIKOM</span>
+                        </div>
+                        
+                        <div class="biodata-item">
+                            <span class="biodata-label">💻 Penjurusan:</span>
+                            <span class="biodata-value">Teknik Informatika</span>
+                        </div>
+                    </div>
+                    
+                    <div class="biodata-footer">
+                        <p>"Website ini dibuat dengan penuh cinta dan dedikasi untuk Dian Fitri Rudiana 💖"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <div class="contact-content">
+            <button class="contact-close" onclick="closeContact()">✕</button>
+            <h2 class="contact-title">Contact Information 📞</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <div class="contact-details">
+                        <p class="contact-label">Phone Number</p>
+                        <a href="tel:+6285317787668" class="contact-value">+62 853-1778-7668</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-icon">📸</span>
+                    <div class="contact-details">
+                        <p class="contact-label">Instagram</p>
+                        <a href="https://instagram.com/MassBagoes_" target="_blank" class="contact-value">@MassBagoes_</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-footer">
+                <p>Feel free to reach out! 💬</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="floating-heart" style="top: 10%; left: 10%;">💖</div>
+        <div class="floating-heart" style="top: 15%; right: 15%;">💚</div>
+        <div class="floating-heart" style="bottom: 20%; left: 20%;">💜</div>
+        <div class="floating-heart" style="bottom: 15%; right: 10%;">💗</div>
+
+        <div class="hero-content">
+            <h1 class="hero-title">19</h1>
+            <p class="hero-subtitle">Tahun Penuh Keajaiban</p>
+            <h2 class="hero-name">Dian Fitri Rudiana</h2>
+        </div>
+        <div class="scroll-hint">Scroll Down</div>
+    </section>
+
+    <!-- Section 1: Perjalanan 3 Tahun -->
+    <section class="message-section reveal" id="section1">
+        <div class="glass-card">
+            <div class="card-number">01</div>
+            <h2 class="message-title">Tiga Tahun yang Berarti ✨</h2>
+            <p class="message-text">
+                Dian yang luar biasa, hari ini kamu genap <strong>19 tahun</strong>, dan aku ingin mengucapkan selamat ulang tahun yang paling istimewa untukmu! Rasanya baru kemarin kita memulai perjalanan ini bersama, tapi ternyata sudah <span class="highlight">3 tahun</span> kita menjadi teman seperjuangan.
+            </p>
+            <p class="message-text">
+                Selama tiga tahun ini, kamu bukan hanya sekedar teman bagiku. Kamu adalah <strong>sahabat dalam perjuangan</strong>, partner yang selalu ada di setiap suka dan duka, teman berbagi cerita di tengah malam, dan seseorang yang membuat hari-hari terasa lebih bermakna. Setiap momen yang kita lalui bersama, dari yang paling sederhana hingga yang paling menantang, semuanya menjadi kenangan berharga yang akan selalu aku simpan.
+            </p>
+            <p class="message-text">
+                Terima kasih sudah menjadi bagian dari hidupku, Dian. Terima kasih untuk setiap tawa, setiap dukungan, setiap kata semangat yang kamu berikan saat aku hampir menyerah. <span class="highlight">Kamu adalah alasan kenapa aku percaya bahwa persahabatan sejati itu nyata.</span>
+            </p>
+            <button class="modern-btn" onclick="openModal('modal1')">
+                <span>💝 Buka Pesanku</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 2: Wanita Inspiratif -->
+    <section class="message-section reveal" id="section2">
+        <div class="glass-card">
+            <div class="card-number">02</div>
+            <h2 class="message-title">Sosok yang Menginspirasi 🌟</h2>
+            <p class="message-text">
+                Hal yang paling aku kagumi darimu, Dian, adalah <strong>semangatmu untuk terus maju</strong>. Di usia yang masih sangat muda ini, kamu sudah menunjukkan dedikasi dan ambisi yang luar biasa. Kamu bukan tipe wanita yang mudah puas dengan zona nyaman. Kamu selalu ingin <span class="highlight">belajar lebih banyak, mencapai lebih tinggi, dan menjadi versi terbaik dari dirimu sendiri</span>.
+            </p>
+            <p class="message-text">
+                Aku melihat bagaimana kamu tidak pernah berhenti bermimpi. Setiap kali kita berbicara, aku selalu merasakan energi positif dan determinasi yang mengalir dari kata-katamu. Kamu mengajariku bahwa <strong>mimpi itu tidak cukup hanya untuk disimpan, tapi harus diperjuangkan</strong>. Kamu membuktikan bahwa usia bukan penghalang untuk memiliki visi besar dan bekerja keras mewujudkannya.
+            </p>
+            <p class="message-text">
+                Terima kasih sudah menjadi contoh nyata bahwa <span class="highlight">wanita bisa kuat, mandiri, dan penuh ambisi tanpa kehilangan kelembutan hatinya</span>. Kamu inspirasiku, Dian. Teruslah bermimpi besar dan jangan pernah biarkan siapapun memberitahumu bahwa kamu tidak bisa mencapainya!
+            </p>
+            <button class="modern-btn" onclick="openModal('modal2')">
+                <span>✨ Lihat Pesanku</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Section 3: ITB -->
+    <section class="message-section reveal" id="section3">
+        <div class="glass-card">
+            <div class="card-number">03</div>
+            <h2 class="message-title">Selamat Menempuh Pendidikan di ITB! 🎓</h2>
+            <p class="message-text">
+                Dan sekarang, Dian, kamu telah mencapai salah satu milestone terbesar dalam hidupmu! <strong>Selamat sudah diterima di Institut Teknologi Bandung!</strong> Ini bukan pencapaian yang mudah, dan aku sangat bangga padamu. ITB bukan sembarang kampus - ini adalah tempat berkumpulnya orang-orang terbaik, dan kamu adalah salah satunya!
+            </p>
+            <p class="message-text">
+                Aku tahu perjalanan menuju kesini tidak mudah. Ada begitu banyak malam yang kamu habiskan untuk belajar, begitu banyak pengorbanan yang kamu lakukan, dan begitu banyak tantangan yang harus kamu hadapi. Tapi <span class="highlight">kamu berhasil, Dian! Kamu membuktikan bahwa kerja keras dan dedikasi selalu membuahkan hasil</span>.
+            </p>
+            <p class="message-text">
+                Di ITB nanti, aku yakin kamu akan menemukan banyak pengalaman baru yang luar biasa. Kamu akan bertemu dengan orang-orang hebat, dosen-dosen yang menginspirasi, dan kesempatan-kesempatan yang akan membentukmu menjadi pribadi yang lebih baik lagi. <strong>Ini adalah awal dari petualangan besar dalam hidupmu</strong>, dan aku tidak sabar melihat semua hal menakjubkan yang akan kamu capai di sana.
+            </p>
+            <p class="message-text">
+                Ingat, apapun tantangan yang kamu hadapi di sana, kamu tidak sendirian. Aku akan selalu ada untuk mendukungmu, untuk mendengarkan ceritamu, dan untuk merayakan setiap kesuksesanmu. <span class="highlight">Go Dian! Tunjukkan pada dunia siapa dirimu sebenarnya! 💪</span>
+            </p>
+            <button class="modern-btn" onclick="openModal('modal3')">
+                <span>🎊 Buka Kejutan!</span>
+            </button>
+            <button class="modern-btn" onclick="openModal('modalPhotos')" style="background: linear-gradient(135deg, var(--green) 0%, var(--pink) 100%); margin-top: 20px;">
+                <span>📸 Kenangan Masa SMA</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Final Section -->
+    <section class="final-section" id="section4">
+        <div class="final-content">
+            <h1 class="final-title">Selamat Ulang Tahun</h1>
+            <h2 class="final-name">Dian Fitri Rudiana</h2>
+            <div class="hearts-emoji">💖 💚 💜</div>
+            <p class="final-message">
+                Semoga tahun ini membawa lebih banyak kebahagiaan, kesuksesan, dan momen-momen indah yang tak terlupakan. 
+                Teruslah bersinar, teruslah bermimpi, dan teruslah menjadi pribadi yang luar biasa, kamu adalah wanita terhebat yang pernah aku lihat!
+            </p>
+            <p class="final-message" style="font-size: clamp(1.5rem, 4vw, 2.5rem); margin-top: 40px;">
+                <span class="highlight" style="font-size: inherit; -webkit-text-fill-color: transparent;">
+                    I'm so grateful to have you in my life! 🌈
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Modal Cards -->
+    <div class="modal-card" id="modal1">
+        <h3 class="modal-title">Untuk Sahabatku 💝</h3>
+        <p class="modal-text">
+            "Dalam 3 tahun ini, kamu telah mengajariku arti persahabatan yang sesungguhnya. 
+            Terima kasih untuk setiap detik yang kita habiskan bersama. 
+            Kamu bukan hanya teman, tapi keluarga yang aku pilih sendiri. 
+            Love you always! 💕"
+        </p>
+        <button class="close-btn" onclick="closeModal('modal1')">Tutup ❤️</button>
+    </div>
+
+    <div class="modal-card" id="modal2">
+        <h3 class="modal-title">You're Amazing! ✨</h3>
+        <p class="modal-text">
+            "Jangan pernah berhenti menjadi dirimu yang sekarang. 
+            Ambisimu, semangatmu, dan keinginanmu untuk terus berkembang adalah hal yang paling aku kagumi. 
+            Kamu adalah bukti bahwa wanita bisa mencapai apapun yang mereka inginkan. 
+            Keep shining, Dian! 🌟"
+        </p>
+        <button class="close-btn" onclick="closeModal('modal2')">Tutup 💚</button>
+    </div>
+
+    <div class="modal-card" id="modal3">
+        <h3 class="modal-title">Mahasiswi ITB! 🎓</h3>
+        <p class="modal-text">
+            "Ini adalah bukti bahwa mimpi-mimpi besar itu nyata! 
+            Kamu sudah membuktikan bahwa kamu layak berada di antara yang terbaik. 
+            ITB adalah awal dari perjalanan luar biasa yang menantimu. 
+            Aku yakin kamu akan membuat banyak orang bangga, termasuk aku. 
+            Semangat terus, future engineer/scientist/innovator! 💪🔥"
+        </p>
+        <button class="close-btn" onclick="closeModal('modal3')">Tutup 💜</button>
+    </div>
+
+    <!-- Photo Gallery Modal -->
+    <div class="modal-card photo-modal" id="modalPhotos">
+        <h3 class="modal-title">Kenangan Indah Masa SMA 🎓📸</h3>
+        <p class="modal-text-photo">
+            "Masa-masa SMA kita penuh dengan momen-momen tak terlupakan. 
+            Dari belajar bersama hingga tertawa bersama, semua kenangan ini akan selalu kusimpan di hati. 
+            Terima kasih sudah menjadi bagian dari perjalanan indah ini! 💕"
+        </p>
+        
+        <div class="photo-gallery">
+            <!-- Foto 1 -->
+            <div class="photo-item">
+                <img src="DianFR.jpeg" alt="Kenangan SMA 1" class="gallery-img">
+                <p class="photo-caption">Momen berpelukan di SMA 💕</p>
+            </div>
+            
+            <!-- Foto 2 -->
+            <div class="photo-item">
+                <img src="DianFR_2.png" alt="Kenangan SMA 2" class="gallery-img">
+                <p class="photo-caption">Pelukan hangat di sekolah 💖</p>
+            </div>
+            
+            <!-- Foto 3 -->
+            <div class="photo-item">
+                <img src="DianFR_3.png" alt="Kenangan SMA 3" class="gallery-img">
+                <p class="photo-caption">Momen penuh kasih sayang 🤗</p>
+            </div>
+            
+            <!-- Foto 4 -->
+            <div class="photo-item">
+                <img src="foto4.jpg" alt="Kenangan SMA 4" class="gallery-img">
+                <p class="photo-caption">Kebersamaan kita 🌟</p>
+            </div>
+        </div>
+        
+        <button class="close-btn" onclick="closeModal('modalPhotos')">Tutup ❤️</button>
+    </div>
+
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
